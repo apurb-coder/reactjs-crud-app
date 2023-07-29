@@ -15,7 +15,7 @@ app.use('/',router);//use route.js to handle endpoints that starts with '/'
 app.use('/user/',userRouter); // use userRouter.js to handle enpoints that starts with '/user/'
 
 
-const PORT = 8000;
+const PORT = process.env.PORT || 8000;
 const username=process.env.DB_USER;
 const password=process.env.DB_PASSWORD;
 //below function connecting to db
