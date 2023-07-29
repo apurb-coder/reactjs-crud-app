@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const URL=process.env.REACT_APP_URL
+// const URL=process.env.REACT_APP_URL
 
 //always do error handling while calling api
 export const addUser= async(data)=>{
     try{
-        return await axios.post(`${URL}/adduser`,data); // post data in the database
+        return await axios.post('/adduser',data); // post data in the database
         //axios.post() called '/adduser'--> in server/route.js, '/adduser' endpoint task is defined
     }catch(error){
         console.log("Error Occured",error);
@@ -16,7 +16,7 @@ export const addUser= async(data)=>{
 // for getting all users data
 export const getUsers= async()=>{
     try{
-        return await axios.get(`${URL}/alluser`); //calling '/alluser' endpoint from frontend
+        return await axios.get("/alluser"); //calling '/alluser' endpoint from frontend
     }catch(error){
         console.log("Error Ocuured while calling /alluser Endpoint",error)
     }
@@ -25,7 +25,7 @@ export const getUsers= async()=>{
 //for getting single user data
 export const getUser=async(id)=>{
     try{
-        return await axios.get(`${URL}/user/${id}`); //calling 
+        return await axios.get(`/user/${id}`); //calling 
     }catch(error){
         console.log("Error Occured while calling /getuser Endpoint",error)
     }
@@ -34,7 +34,7 @@ export const getUser=async(id)=>{
 //for sending user details data
 export const editUser=async(id,user)=>{
     try{
-        await axios.put(`${URL}/user/${id}`, user); // put : update request
+        await axios.put(`/user/${id}`, user); // put : update request
     }
     catch(error){
         console.log("while sending user details faced an error",error)
@@ -43,7 +43,7 @@ export const editUser=async(id,user)=>{
 // sending delete request
 export const deleteUser=async(id)=>{
     try{
-        await axios.delete(`${URL}/user/${id}`); //delete request
+        await axios.delete(`/user/${id}`); //delete request
     }catch(error){
         console.log("while sending delete request faced an error",error)
     }
