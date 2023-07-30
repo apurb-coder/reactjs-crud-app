@@ -3,6 +3,8 @@ import {Table, TableBody, TableCell, TableHead, TableRow,styled, Button} from '@
 import { getUsers, deleteUser } from '../service/api.js'
 import { useNavigate } from 'react-router-dom';// for easy navigation , step-1
 
+const URL=process.env.REACT_APP_URL
+
 //styling table- variable name must start capital
 const StyTable = styled(Table)`
   width: 90%;

@@ -11,6 +11,8 @@ import React, { useState } from "react";
 import {useNavigate} from "react-router-dom"//for easy page navigation: step-1
 import { addUser } from "../service/api";
 
+//const URL=process.env.REACT_APP_URL
+
 //styling- variable name must start capital
 const Conatiner = styled(FormGroup)`
   width: 50%;
@@ -34,7 +36,7 @@ const AddUser = () => {
 
   const addUserDetails=async()=>{
     await addUser(user);
-    navigate("/alluser")//for easy navigation: step-3
+    navigate(`/alluser`)//for easy navigation: step-3
   }
   return (
     <div>

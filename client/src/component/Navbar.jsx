@@ -1,7 +1,7 @@
 import { AppBar, Toolbar, styled } from '@mui/material'
 import React from 'react'
 
-import { NavLink } from "react-router-dom"; // must import
+import { NavLink } from "react-router-dom"; // navbar me link add karne ke liye use hota
 
 const Header = styled(AppBar)`
 background: #111111;

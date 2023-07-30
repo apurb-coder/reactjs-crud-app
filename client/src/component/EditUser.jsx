@@ -12,6 +12,7 @@ import { getUser , editUser} from "../service/api";
 import { useNavigate } from "react-router-dom";
 import {useParams} from "react-router-dom" //url se kuch extract karne ke liye
 
+const URL=process.env.REACT_APP_URL
 //styling- variable name must start capital
 const Conatiner = styled(FormGroup)`
   width: 50%;
@@ -42,7 +43,7 @@ const EditUser = () => {
   //when edit user button is clicked call this function
   const editUserDetails=async()=>{
     await editUser(id,user);
-    navigate('/alluser')
+    navigate(`/alluser`)
   }
 
   return (
